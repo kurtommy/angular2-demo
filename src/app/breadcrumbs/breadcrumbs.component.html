@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['dati-preventivo']">Dati preventivo</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a *ngIf="quoteService.quoteForm.quoteData.forzaVendita" [routerLink]="['dati-finanziamento']">Dati finanziamento</a>
+    <span *ngIf="!quoteService.quoteForm.quoteData.forzaVendita">Dati finanziamento</span>
+  </li>
+  <li class="breadcrumb-item">
+    <a *ngIf="quoteService.quoteForm.financingData.contractType" [routerLink]="['conferma-preventivo']">Conferma preventivo</a>
+    <span *ngIf="!quoteService.quoteForm.financingData.contractType">Conferma preventivo</span>
+  </li>
+</ol>

@@ -1,0 +1,47 @@
+<form [formGroup]="financingDataForm" (ngSubmit)="submitFinancingData()">
+
+  <fieldset class="form-group">
+    <legend>Seleziona la tipologia di contratto</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="indeterminato"
+            [formControl]="contractType">
+        Indeterminato
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="determinato"
+            [formControl]="contractType">
+        Determinato
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleSelect1">Tipo finanziamento</label>
+      <select name="exampleSelect1" class="form-control" [formControl]="financingType">
+        <option value="">Scegli un opzione</option>
+        <option *ngFor="let financingType of financingTypes" [value]="financingType">{{financingType}}</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleSelect2">Tipo di materiale</label>
+      <select name="exampleSelect2" class="form-control" [formControl]="materialType">
+        <option value="">Scegli un opzione</option>
+        <option *ngFor="let materialType of materialTypes" [value]="materialType">{{materialType}}</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <br>
+  <button class="btn btn-primary" type="submit" [disabled]="!financingDataForm.valid">Procedi</button>
+</form>
+
+<div class="">
+  {{quoteService.quote | json}}
+</div>

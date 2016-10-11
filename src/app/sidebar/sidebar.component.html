@@ -1,0 +1,28 @@
+<!-- {{formsData | json}} -->
+<h3>Riepilogo</h3>
+<div class="row">
+  <div class="col-sm-24">
+    <ul class="list-group">
+      <li class="list-group-item" *ngIf="formsData.quoteData.veicleType">
+        <strong>Tipo Veicolo:</strong> <br>
+        {{formsData.quoteData.veicleType}}
+      </li>
+      <li class="list-group-item" *ngIf="formsData.quoteData.forzaVendita">
+        <strong>Forza vendita:</strong> <br>
+        {{formsData.quoteData.forzaVendita}}
+      </li>
+      <li class="list-group-item" *ngIf="formsData.financingData.contractType">
+        <strong>Tipo di contratto:</strong> <br>
+        {{formsData.financingData.contractType}}
+      </li>
+      <li class="list-group-item" *ngIf="formsData.financingData.financingType">
+        <strong>Tipo di finanziamento:</strong> <br>
+        {{formsData.financingData.financingType}}
+      </li>
+      <li class="list-group-item" *ngIf="formsData.financingData.material.materialType">
+        <strong>Tipo di materiale:</strong> <br>
+        {{formsData.financingData.material.materialType}}
+      </li>
+    </ul>
+  </div>
+</div>

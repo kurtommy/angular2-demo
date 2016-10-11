@@ -1,0 +1,26 @@
+@import "../styles.scss";
+// $col = 'blue';
+
+// div {
+//   border: solid 1px yellow;
+// }
+
+.container {
+  // border: solid 1px $blue-color;
+}
+
+.second-row {
+  height: 300px;
+  > div {
+    height: 100px;
+  }
+}
+
+.left-col {
+  @include make-col-ready();
+  @include make-col(12);
+}
+.right-col {
+  @include make-col-ready();
+  @include make-col(12);
+}

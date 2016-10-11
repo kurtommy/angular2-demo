@@ -1,0 +1,37 @@
+<!-- {{quoteDataForm.value | json}} -->
+<form [formGroup]="quoteDataForm" (ngSubmit)="submitQuoteData()">
+
+  <fieldset class="form-group">
+    <legend>Tipo del veicolo</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="car"
+            [formControl]="veicleType" checked="checked">
+        Auto
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="camper"
+            [formControl]="veicleType" [checked]="veicleType.value === 'camper'">
+        Camper
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label for="forzaVendita">Forza vendita</label>
+    <input type="text" class="form-control" name="forzaVendita" id="forzaVendita" [formControl]="forzaVendita">
+    <div [hidden]="forzaVendita.valid || forzaVendita.untouched">
+      The following problems have been found with the username:
+      <div [hidden]="!forzaVendita.hasError('minlength')">Username can not be shorter than 5 characters.</div>
+      <div [hidden]="!forzaVendita.hasError('required')">Username is required.</div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!forzaVendita.valid">Procedi</button>
+</form>
+
+<div class="">
+  <!-- {{quoteService.quote | json}} -->
+</div>

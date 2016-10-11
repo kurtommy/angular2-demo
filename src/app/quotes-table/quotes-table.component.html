@@ -1,0 +1,36 @@
+<div class="card">
+  <h3 class="card-header">Elenco preventivi</h3>
+  <div class="card-block">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tipo veicolo</th>
+          <th>Forza vendita</th>
+          <th>Tipo di contratto</th>
+          <th>Tipo di finanziamento</th>
+          <th>Tipo di materiale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quote of quoteService.quoteForms; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{quote.quoteData.veicleType}}</td>
+          <td>{{quote.quoteData.forzaVendita}}</td>
+          <td>{{quote.financingData.contractType}}</td>
+          <td>{{quote.financingData.financingType}}</td>
+          <td>{{quote.financingData.material.materialType}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <button
+        (click)="quoteService.saveQuotes()"
+        type="button"
+        class="btn btn-primary">
+      Salva preventivi
+    </button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <h3 class="card-header">Preventivo credito veicolo</h3>
+      <div class="card-block">
+
+        <app-breadcrumbs></app-breadcrumbs>
+
+        <div class="row">
+          <div class="xleft-col col-sm-9">
+            <router-outlet></router-outlet>
+          </div>
+
+          <div class="xright-col col-sm-3">
+            <app-sidebar [forms-data]="quoteService.quoteForm"></app-sidebar>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

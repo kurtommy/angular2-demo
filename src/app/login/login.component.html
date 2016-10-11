@@ -1,0 +1,36 @@
+<div class="card">
+  <h3 class="card-header">Login</h3>
+  <div class="card-block">
+    <div class="row">
+      <div class="col-xs-6 offset-xs-3">
+        <div *ngIf="userService.user.username">
+          <h3>Logged as: {{userService.user.username}}</h3>
+          <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+
+        <form *ngIf="!userService.user.username" [formGroup]="loginForm" (ngSubmit)="login()">
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" [formControl]="username">
+            <div [hidden]="username.valid || username.untouched">
+              The following problems have been found with the username:
+              <div [hidden]="!username.hasError('required')">Username is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" [formControl]="password">
+            <div [hidden]="password.valid || password.untouched">
+              The following problems have been found with the password:
+              <div [hidden]="!password.hasError('required')">Password is required.</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="!username.valid || !password.valid">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

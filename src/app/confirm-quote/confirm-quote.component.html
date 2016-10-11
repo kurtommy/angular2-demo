@@ -1,0 +1,21 @@
+<div>
+  <button
+      (click)="confirmQuote()"
+      *ngIf="quoteService.quoteForm.quoteData.forzaVendita"
+      type="button"
+      class="btn btn-primary">
+    Conferma preventivo
+  </button>
+  <button
+      [routerLink]="['/preventivo']"
+      *ngIf="!quoteService.quoteForm.quoteData.forzaVendita"
+      type="button"
+      class="btn btn-primary">
+    Nuovo preventivo
+  </button>
+</div>
+
+<hr>
+
+<!-- {{quoteService.quotes | json}} -->
+<app-quotes-table *ngIf="quoteService.quoteForms.length"></app-quotes-table>

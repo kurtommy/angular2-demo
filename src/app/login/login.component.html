@@ -3,12 +3,12 @@
   <div class="card-block">
     <div class="row">
       <div class="col-xs-6 offset-xs-3">
-        <div *ngIf="userService.user.username">
-          <h3>Logged as: {{userService.user.username}}</h3>
+        <div *ngIf="userService.user.name">
+          <h3>Logged as: {{userService.user.name}}, {{userService.user.surname}}</h3>
           <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
         </div>
 
-        <form *ngIf="!userService.user.username" [formGroup]="loginForm" (ngSubmit)="login()">
+        <form *ngIf="!userService.user.name" [formGroup]="loginForm" (ngSubmit)="login()">
 
           <div class="form-group">
             <label for="username">Username</label>

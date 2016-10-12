@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { UserService } from '../services';
 
 // encapsulation: ViewEncapsulation.None
 // ViewEncapsulation.Emulated
@@ -12,7 +13,7 @@ import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }

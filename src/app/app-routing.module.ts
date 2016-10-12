@@ -11,6 +11,8 @@ import { ConfirmQuoteComponent } from './confirm-quote/confirm-quote.component';
 import { QuoteFormDeactivateGuard } from './shared';
 import { LoginGuard } from './shared';
 
+// import { LeasingComponent } from './leasing/leasing.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'preventivo', pathMatch: 'full' },
   { path: 'preventivo', component: QuoteComponent,
@@ -23,7 +25,9 @@ const routes: Routes = [
   },
   { path: 'elenco-preventivi', component: QuotesTableComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'area-riservata', component: ReservedAreaComponent , canActivate: [LoginGuard]}
+  { path: 'area-riservata', component: ReservedAreaComponent , canActivate: [LoginGuard]},
+  { path: 'leasing', loadChildren: 'app/leasing/leasing.module#LeasingModule' }
+  // { path: 'leasing', component: LeasingComponent }
 ];
 
 @NgModule({

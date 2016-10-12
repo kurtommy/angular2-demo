@@ -1,36 +1,41 @@
-demo steps
+code lab steps
 
+Step 1
 - App scaffold
 - Add bootstrap
 -- No route
 - Menu component
-- Quote-data component
-- Financing-data component
-- Confirm quote component
-- Sidebar component
-- Breadcrumb component
+- quote-data component
+- financing-data component
+- confirm-quote component
+- sidebar component
+- breadcrumb component
+- quotesTable component
+- login component
+- reserved-area component
 
+Step 2
+- Add routes and child routes
+- Service quote-form and quote model
 
-- Add first form with validation
+Step 3
+- Implement quote-data, financing-data, confirm-quote, quotes-table, quote-form-deactivate-guard, sidebar
 
-- Richiesta di leasing
+Step 4
+- User service and user model
+- Login guard
+- Implement login component
+- Implement set value on forms
+- Implement breadcrumbs
+- Add leasing menu item and leasing lazy load module
 
-- Routing
-- Routing child
+### Advanced
 
-- Add second form
+- Observables vs promises
 
-- Add quote service
-- Bind form data to service
-- Bind sidebar data to service
-- Programmatic Link on wizard
-
-- Confirm quote
-- Add quotes to table
-
-- User component
-- Mock user data
-
+- Create new module
+- Import module component in main app and use leasing component
+- Lazy load that module
 
 # Angular2Demo
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 
 @Injectable()
 export class UserService {
@@ -17,17 +17,20 @@ export class UserService {
     this.user = new User();
   }
 
-  login(credentials: {username: string, password: string}) {
-    this.user.username = credentials.username;
+  login({username, password}: {username: string, password: string}) {
+    // const {username, password} = credentials;
     this.isLogged = true;
-    // const url = `www.lol.it`;
-    // return this.http
-    //   .post(url, JSON.stringify(this.quoteForms), {headers: this.headers})
-    //   .toPromise()
-    //   .then()
-    //   .catch(() => {
-    //     console.error('Api error management');
-    //   });
+    const url = `/assets/mock/user.json?username=${username}&password=${password}`;
+    return this.http
+      .get(url, {headers: this.headers})
+      .catch((err, obs) => {
+        console.error('Api error management');
+        return [];
+      })
+      .subscribe((user: Response) => {
+        this.user = user.json();
+        console.log(this.user);
+      });
   }
 
   logout() {

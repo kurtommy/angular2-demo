@@ -12,7 +12,6 @@ export class QuoteDataComponent implements OnInit {
   quoteDataForm: FormGroup;
   forzaVendita: FormControl;
   veicleType: FormControl;
-  formIsValid: boolean = false;
 
   constructor(builder: FormBuilder, private quoteService: QuoteService, private router: Router) {
     this.forzaVendita = new FormControl('', [
@@ -35,7 +34,6 @@ export class QuoteDataComponent implements OnInit {
     console.log(this.forzaVendita);
     console.log(this.quoteDataForm.value);
     this.quoteService.quoteForm.quoteData = this.quoteDataForm.value;
-    this.formIsValid = true;
     this.router.navigate(['/preventivo/dati-finanziamento']);
   }
 

@@ -23,9 +23,9 @@
     <label for="forzaVendita">Forza vendita</label>
     <input type="text" class="form-control" name="forzaVendita" id="forzaVendita" [formControl]="forzaVendita">
     <div [hidden]="forzaVendita.valid || forzaVendita.untouched">
-      The following problems have been found with the username:
-      <div [hidden]="!forzaVendita.hasError('minlength')">Username can not be shorter than 5 characters.</div>
-      <div [hidden]="!forzaVendita.hasError('required')">Username is required.</div>
+      Forza vendita non valido
+      <div [hidden]="!forzaVendita.hasError('minlength')">Il campo non puo' essere piu corto di 5 caratteri</div>
+      <div [hidden]="!forzaVendita.hasError('required')">Il Campo e' obbligatorio.</div>
     </div>
   </div>
 

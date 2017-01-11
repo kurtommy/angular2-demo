@@ -32,7 +32,7 @@ export class QuoteDataComponent implements OnInit {
 
   submitQuoteData() {
     console.log(this.forzaVendita);
-    console.log(this.quoteDataForm.value);
+    console.log(this.quoteDataForm.valid);
     this.quoteService.quoteForm.quoteData = this.quoteDataForm.value;
     this.router.navigate(['/preventivo/dati-finanziamento']);
   }

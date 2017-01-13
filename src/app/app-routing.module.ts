@@ -14,7 +14,7 @@ import { LoginGuard } from './shared';
 // import { LeasingComponent } from './leasing/leasing.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'preventivo', pathMatch: 'full' },
+  { path: '', redirectTo: 'security', pathMatch: 'full' },
   { path: 'preventivo', component: QuoteComponent,
     children: [
       { path: '', redirectTo: 'dati-preventivo', pathMatch: 'full' },

@@ -27,6 +27,8 @@ import { QuotesTableComponent } from './quotes-table/quotes-table.component';
 import { LoginComponent } from './login/login.component';
 import { ReservedAreaComponent } from './reserved-area/reserved-area.component';
 
+import { SecurityModule } from './security-module/security.module';
+
 
 // Leasing Module
 // import { LeasingModule } from './leasing/leasing.module';
@@ -39,6 +41,7 @@ import { ReservedAreaComponent } from './reserved-area/reserved-area.component';
     HttpModule,
     NgbModule,
     Angular2DemoRoutingModule,
+    SecurityModule
     // LeasingModule
   ],
   declarations: [

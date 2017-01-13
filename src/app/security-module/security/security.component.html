@@ -1,0 +1,29 @@
+
+<h1>#2 Injection</h1>
+<hr>
+<app-insecure-login></app-insecure-login>
+<hr>
+
+
+<h1>#2 Authentication Hack</h1>
+<hr>
+This component is hidden via css
+<div [hidden]="!isLogged">
+  <app-authentication-hack></app-authentication-hack>
+</div>
+
+<div>
+  this component is hidden via ngIf
+  <div>
+    <app-authentication-hack *ngIf="isLogged"></app-authentication-hack>
+  </div>
+</div>
+<hr>
+
+<h1>#3 XSS cross site scripting</h1>
+<div>
+  <app-xss></app-xss>
+</div>
+<hr>
+
+<div style="clear:both;"></div>

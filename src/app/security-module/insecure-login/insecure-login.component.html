@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-xs-6">
+    <div class="card">
+      <h3 class="card-header">Insecure Login</h3>
+      <div class="card-block">
+        <div class="row">
+          <h3>Form senza validazioni</h3>
+           You can send alert('Hack me!')
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" id="username" [formControl]="username">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" id="password" [formControl]="password">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6">
+    <div class="card">
+      <h3 class="card-header">Secure Login</h3>
+      <div class="card-block">
+        <div class="row">
+          <h3>Form con validazioni</h3>
+          <form [formGroup]="secureLoginForm" (ngSubmit)="secureLogin()">
+            {{secureLoginForm.submitted}}
+            <div class="form-group">
+              <label for="secureUsername">Username (solo caratteri)</label>
+              <input type="text" class="form-control" name="secureUsername" id="secureUsername" 
+                  [formControl]="secureUsername">
+              is valid? {{secureUsername.valid}}
+              <div [hidden]="secureUsername.valid || secureUsername.untouched">
+                <div [hidden]="!secureUsername.hasError('required')">Username is required.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="securePassword">Password</label>
+              <input type="password" class="form-control" name="securePassword" id="securePassword" 
+                  [formControl]="securePassword">
+              <div [hidden]="securePassword.valid || securePassword.untouched">
+                <div [hidden]="!securePassword.hasError('required')">Password is required.</div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit" 
+                [disabled]="!secureUsername.valid || !securePassword.valid">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

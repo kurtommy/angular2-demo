@@ -1,0 +1,31 @@
+<h3>Interpolated values are escaped by default</h3>
+String one
+<div>
+  {{response?.script}}
+</div>
+String two
+<div>
+  {{response?.tags}}
+</div>
+<br>
+
+<h3>innerHtml bindings are sanitized by default</h3>
+<div [innerHTML]="response?.script"></div>
+<div [innerHTML]="response?.tags"></div>
+
+<h3>Untrusted URL</h3>
+<a [href]="response?.url"> Click me :) </a>
+
+<h3>Trusted URL</h3>
+<a [href]="trustedUrl"> Click me :) </a>
+<br>
+
+<!--<h3>Trusted resource URL</h3>-->
+<!--<iframe width="640" height="390" [src]="trustedResourceUrl"></iframe>-->
+
+<h3>Template injection</h3>
+<div>
+  this inline script is escapd 
+  <script>alert('Hack me!')</script>
+  by Angular
+</div>

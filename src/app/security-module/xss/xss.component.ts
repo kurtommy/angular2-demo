@@ -15,9 +15,6 @@ export class XssComponent implements OnInit {
   constructor(private http: Http, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    document.cookie = 'secure-key=this is a secure key';
-    console.log(document.cookie);
-
     this.http.get('http://w5bpr2hc8mjekzbdf-mock.stoplight-proxy.io/api/v1/xss')
       .subscribe(val => {
         this.response = val.json();

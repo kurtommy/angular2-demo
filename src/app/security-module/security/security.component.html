@@ -1,29 +1,56 @@
+<ul>
+  <li><a (click)="showAttack=1">#1 Injection</a></li>
+  <li><a (click)="showAttack=3">#3 XSS cross site scripting</a></li>
+  <li><a (click)="showAttack=6">#6 Sensitive data exposure</a></li>
+  <li><a (click)="showAttack=7">#7 Missing function-level access control</a></li>
+  <li><a (click)="showAttack=8">#8 (CSRF) Cross site request forgery</a></li>
+</ul>
 
-<h1>#2 Injection</h1>
-<hr>
-<app-insecure-login></app-insecure-login>
-<hr>
-
-
-<h1>#2 Authentication Hack</h1>
-<hr>
-This component is hidden via css
-<div [hidden]="!isLogged">
-  <app-authentication-hack></app-authentication-hack>
-</div>
-
-<div>
-  this component is hidden via ngIf
-  <div>
-    <app-authentication-hack *ngIf="isLogged"></app-authentication-hack>
+<div [ngSwitch]="showAttack">
+  <div *ngSwitchCase="1">
+    <h1>#1 Injection</h1>
+    <hr>
+    <app-insecure-login></app-insecure-login>
+    <hr>
   </div>
-</div>
-<hr>
 
-<h1>#3 XSS cross site scripting</h1>
-<div>
-  <app-xss></app-xss>
-</div>
-<hr>
+  <div *ngSwitchCase="3">
+    <h1>#3 XSS cross site scripting</h1>
+    <div>
+      <app-xss></app-xss>
+    </div>
+    <hr>
+  </div>
 
-<div style="clear:both;"></div>
+  <div *ngSwitchCase="6">
+    <h1>#6 Sensitive data exposure</h1>
+    <hr>
+    This component is hidden via css
+    <div [hidden]="!isLogged">
+      <app-sensitive-data-exposure></app-sensitive-data-exposure>
+    </div>
+    <hr>
+  </div>
+
+  <div *ngSwitchCase="7">
+    <h1>#7 Missing function-level access control</h1>
+    <hr>
+    <div>
+      This component will make an API call is hidden via ngIf
+      <div>
+        <app-missing-function-level-access-control *ngIf="isLogged"></app-missing-function-level-access-control>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <div *ngSwitchCase="8">
+    <h1>#8 (CSRF) Cross site request forgery</h1>
+    <hr>
+    <div>
+        <app-xsrf></app-xsrf>
+    </div>
+    <hr>
+  </div>
+
+</div>

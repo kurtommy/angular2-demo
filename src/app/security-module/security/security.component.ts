@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecurityComponent implements OnInit {
   isLogged = false;
-  constructor() { }
+  showAttack = 1;
+  constructor() {
+    document.cookie = 'secure-key=this is a secure key';
+    // document.cookie = 'XSRF-TOKEN=!@#!@; secure-key=this is a secure key';
+    console.log(document.cookie);
+  }
 
   ngOnInit() { }
 

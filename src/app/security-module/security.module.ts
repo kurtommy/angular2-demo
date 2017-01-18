@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './security.routing';
 import { SecurityComponent } from './security/security.component';
 import { InsecureLoginComponent } from './insecure-login/insecure-login.component';
-import { AuthenticationHackComponent } from './authentication-hack/authentication-hack.component';
 import { XssComponent } from './xss/xss.component';
 import { SensitiveDataExposureComponent } from './sensitive-data-exposure/sensitive-data-exposure.component';
 import { MissingFunctionLevelAccessControlComponent } from 
@@ -23,7 +22,6 @@ import { XsrfLandingComponent } from './xsrf-landing/xsrf-landing.component';
   declarations: [
     SecurityComponent,
     InsecureLoginComponent,
-    AuthenticationHackComponent,
     XssComponent,
     SensitiveDataExposureComponent,
     MissingFunctionLevelAccessControlComponent,

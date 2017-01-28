@@ -29,7 +29,6 @@ import { ReservedAreaComponent } from './reserved-area/reserved-area.component';
 
 import { SecurityModule } from './security-module/security.module';
 
-
 // Leasing Module
 // import { LeasingModule } from './leasing/leasing.module';
 

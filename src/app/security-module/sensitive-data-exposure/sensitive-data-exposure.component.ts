@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SensitiveDataExposureComponent implements OnInit {
   private privateKey = 'THIS-IS-A-PRIVATE-KEY';
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

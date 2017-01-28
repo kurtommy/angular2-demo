@@ -25,9 +25,9 @@
           $.ajax({
               type: 'GET',
               url: 'http://localhost:4200/xsrf-landing',
-              // beforeSend: function(request) {
-              //   request.setRequestHeader('XSRF-TOKEN', '!@#!@');
-              // },
+              beforeSend: function(request) {
+                request.setRequestHeader('x-xsrf-token', '!@#!@');
+              },
               // crossDomain: true,
               // xhrFields: {
               //     withCredentials: true
